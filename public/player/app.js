@@ -1510,11 +1510,12 @@ function scheduleWindow(pass, p0, p1, jobs) {
 }
 function updatePlayhead() {
   if (!playing) return;
-  rollUI?.setPlayhead(absolutePosition(), playbackMode, activePattern.id);
-  if (playbackMode === "song") arrangementUI?.setPlayhead(absolutePosition());
-  else {
-    const pos = absolutePosition(), fraction = pos / activePattern.lengthSec;
-    beatUI?.setPlayhead(fraction); stepUI?.setPlayhead(fraction); $("songClock").textContent = pos.toFixed(3) + " s";
+  const pos = absolutePosition();
+  rollUI?.setPlayhead(pos, playbackMode, activePattern.id);
+  arrangementUI?.setPlayhead(pos);
+  if (playbackMode === "pattern") {
+    const fraction = pos / activePattern.lengthSec;
+    beatUI?.setPlayhead(fraction); stepUI?.setPlayhead(fraction);
     if (activePattern.source) $("tuneClock").textContent = pos.toFixed(1) + "s";
   }
   playheadFrame = requestAnimationFrame(updatePlayhead);
