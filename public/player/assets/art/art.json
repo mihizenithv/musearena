@@ -1,0 +1,358 @@
+{
+ "sitar": {
+  "keywords": [
+   "sitar"
+  ],
+  "file": "assets/art/sitar.webp",
+  "thumb": "assets/art/sitar-96.webp"
+ },
+ "tabla": {
+  "keywords": [
+   "tabla",
+   "tablex"
+  ],
+  "file": "assets/art/tabla.webp",
+  "thumb": "assets/art/tabla-96.webp"
+ },
+ "tanpura": {
+  "keywords": [
+   "tanpura",
+   "tambura"
+  ],
+  "file": "assets/art/tanpura.webp",
+  "thumb": "assets/art/tanpura-96.webp"
+ },
+ "harmonium": {
+  "keywords": [
+   "harmonium",
+   "shruti"
+  ],
+  "file": "assets/art/harmonium.webp",
+  "thumb": "assets/art/harmonium-96.webp"
+ },
+ "bansuri": {
+  "keywords": [
+   "bansuri",
+   "flute-indian"
+  ],
+  "file": "assets/art/bansuri.webp",
+  "thumb": "assets/art/bansuri-96.webp"
+ },
+ "santoor": {
+  "keywords": [
+   "santoor"
+  ],
+  "file": "assets/art/santoor.webp",
+  "thumb": "assets/art/santoor-96.webp"
+ },
+ "sarangi": {
+  "keywords": [
+   "sarangi",
+   "esraj"
+  ],
+  "file": "assets/art/sarangi.webp",
+  "thumb": "assets/art/sarangi-96.webp"
+ },
+ "mridangam": {
+  "keywords": [
+   "mridangam",
+   "pakhawaj"
+  ],
+  "file": "assets/art/mridangam.webp",
+  "thumb": "assets/art/mridangam-96.webp"
+ },
+ "shehnai": {
+  "keywords": [
+   "shehnai",
+   "shanai",
+   "shenai"
+  ],
+  "file": "assets/art/shehnai.webp",
+  "thumb": "assets/art/shehnai-96.webp"
+ },
+ "veena": {
+  "keywords": [
+   "veena",
+   "sarod",
+   "swarmandal"
+  ],
+  "file": "assets/art/veena.webp",
+  "thumb": "assets/art/veena-96.webp"
+ },
+ "dholak": {
+  "keywords": [
+   "dholak",
+   "dholki",
+   "dhol"
+  ],
+  "file": "assets/art/dholak.webp",
+  "thumb": "assets/art/dholak-96.webp"
+ },
+ "kanjira": {
+  "keywords": [
+   "kanjira"
+  ],
+  "file": "assets/art/kanjira.webp",
+  "thumb": "assets/art/kanjira-96.webp"
+ },
+ "morsing": {
+  "keywords": [
+   "morsing"
+  ],
+  "file": "assets/art/morsing.webp",
+  "thumb": "assets/art/morsing-96.webp"
+ },
+ "ghatam": {
+  "keywords": [
+   "ghatam"
+  ],
+  "file": "assets/art/ghatam.webp",
+  "thumb": "assets/art/ghatam-96.webp"
+ },
+ "temple-bell": {
+  "keywords": [
+   "temple",
+   "bell"
+  ],
+  "file": "assets/art/temple-bell.webp",
+  "thumb": "assets/art/temple-bell-96.webp"
+ },
+ "manjira": {
+  "keywords": [
+   "manjira",
+   "manjeera",
+   "ghungroo",
+   "cymbal"
+  ],
+  "file": "assets/art/manjira.webp",
+  "thumb": "assets/art/manjira-96.webp"
+ },
+ "kalimba": {
+  "keywords": [
+   "kalimba",
+   "mbira",
+   "nyunga"
+  ],
+  "file": "assets/art/kalimba.webp",
+  "thumb": "assets/art/kalimba-96.webp"
+ },
+ "handpan": {
+  "keywords": [
+   "handpan"
+  ],
+  "file": "assets/art/handpan.webp",
+  "thumb": "assets/art/handpan-96.webp"
+ },
+ "darbuka": {
+  "keywords": [
+   "darbuka",
+   "frame drum",
+   "djembe"
+  ],
+  "file": "assets/art/darbuka.webp",
+  "thumb": "assets/art/darbuka-96.webp"
+ },
+ "didgeridoo": {
+  "keywords": [
+   "didgeridoo"
+  ],
+  "file": "assets/art/didgeridoo.webp",
+  "thumb": "assets/art/didgeridoo-96.webp"
+ },
+ "balafon": {
+  "keywords": [
+   "balafon",
+   "marimba",
+   "xylophone"
+  ],
+  "file": "assets/art/balafon.webp",
+  "thumb": "assets/art/balafon-96.webp"
+ },
+ "zither": {
+  "keywords": [
+   "dan tranh",
+   "guzheng",
+   "koto",
+   "psaltery",
+   "zither"
+  ],
+  "file": "assets/art/zither.webp",
+  "thumb": "assets/art/zither-96.webp"
+ },
+ "shakuhachi": {
+  "keywords": [
+   "shakuhachi",
+   "pan flute",
+   "pan_flute",
+   "ocarina",
+   "recorder",
+   "whistle"
+  ],
+  "file": "assets/art/shakuhachi-v2.webp",
+  "thumb": "assets/art/shakuhachi-v2-96.webp"
+ },
+ "erhu": {
+  "keywords": [
+   "erhu",
+   "fiddle",
+   "shamisen"
+  ],
+  "file": "assets/art/erhu.webp",
+  "thumb": "assets/art/erhu-96.webp"
+ },
+ "singing-bowl": {
+  "keywords": [
+   "singing",
+   "bowl",
+   "gong",
+   "chime",
+   "hand bells",
+   "bell tree",
+   "mark trees"
+  ],
+  "file": "assets/art/singing-bowl.webp",
+  "thumb": "assets/art/singing-bowl-96.webp"
+ },
+ "cajon": {
+  "keywords": [
+   "cajon",
+   "slit drum",
+   "woodblock",
+   "claves"
+  ],
+  "file": "assets/art/cajon.webp",
+  "thumb": "assets/art/cajon-96.webp"
+ },
+ "drums": {
+  "keywords": [
+   "snare",
+   "drum",
+   "808",
+   "909",
+   "breaks",
+   "kick",
+   "tom",
+   "hh",
+   "hi-hat",
+   "conga",
+   "bongo",
+   "tambourine",
+   "shaker",
+   "clap",
+   "cowbell",
+   "agogo",
+   "guiro",
+   "cabasa",
+   "sleigh"
+  ],
+  "file": "assets/art/drums.webp",
+  "thumb": "assets/art/drums-96.webp"
+ },
+ "piano": {
+  "keywords": [
+   "piano",
+   "keys",
+   "organ",
+   "harpsichord",
+   "electric_piano",
+   "reed_organ"
+  ],
+  "file": "assets/art/piano.webp",
+  "thumb": "assets/art/piano-96.webp"
+ },
+ "mallets": {
+  "keywords": [
+   "vibraphone",
+   "glockenspiel",
+   "glock",
+   "celesta",
+   "music box",
+   "wine glasses"
+  ],
+  "file": "assets/art/mallets.webp",
+  "thumb": "assets/art/mallets-96.webp"
+ },
+ "violin": {
+  "keywords": [
+   "violin",
+   "viola",
+   "cello",
+   "string",
+   "contrabass"
+  ],
+  "file": "assets/art/violin.webp",
+  "thumb": "assets/art/violin-96.webp"
+ },
+ "harp": {
+  "keywords": [
+   "harp"
+  ],
+  "file": "assets/art/harp.webp",
+  "thumb": "assets/art/harp-96.webp"
+ },
+ "guitar": {
+  "keywords": [
+   "guitar",
+   "gtr",
+   "banjo",
+   "bass"
+  ],
+  "file": "assets/art/guitar.webp",
+  "thumb": "assets/art/guitar-96.webp"
+ },
+ "flute": {
+  "keywords": [
+   "flute",
+   "clarinet",
+   "oboe",
+   "bassoon",
+   "sax",
+   "harmonica"
+  ],
+  "file": "assets/art/flute.webp",
+  "thumb": "assets/art/flute-96.webp"
+ },
+ "brass": {
+  "keywords": [
+   "trumpet",
+   "trombone",
+   "horn",
+   "tuba",
+   "brass"
+  ],
+  "file": "assets/art/brass.webp",
+  "thumb": "assets/art/brass-96.webp"
+ },
+ "voice": {
+  "keywords": [
+   "choir",
+   "voice",
+   "vocal"
+  ],
+  "file": "assets/art/voice.webp",
+  "thumb": "assets/art/voice-96.webp"
+ },
+ "synth": {
+  "keywords": [
+   "synth",
+   "pad",
+   "moog",
+   "lead",
+   "fx"
+  ],
+  "file": "assets/art/synth.webp",
+  "thumb": "assets/art/synth-96.webp"
+ },
+ "vinyl": {
+  "keywords": [
+   "vinyl",
+   "tape",
+   "texture",
+   "rain",
+   "ocean",
+   "glitch"
+  ],
+  "file": "assets/art/vinyl.webp",
+  "thumb": "assets/art/vinyl-96.webp"
+ }
+}

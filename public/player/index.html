@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MuseArena</title>
+<link rel="icon" href="assets/art/logo-64.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-follow" viewBox="0 0 20 20"><path stroke-width="1.5" d="M2 10h12m-5-5 5 5-5 5m8-13v16"/></symbol>
+<symbol id="i-copy" viewBox="0 0 20 20"><path stroke-width="1.5" d="M3 13V3h9v3M7 7h10v10H7z"/></symbol>
+<symbol id="i-paste" viewBox="0 0 20 20"><path stroke-width="1.5" d="M6 5H3v13h14V5h-3M7 3h6v4H7z"/></symbol>
+<symbol id="i-duplicate" viewBox="0 0 20 20"><path stroke-width="1.5" d="M2 13V2h10v3M6 6h12v12H6zM9 12h6m-3-3v6"/></symbol>
+<symbol id="i-mic" viewBox="0 0 20 20"><rect x="7" y="2" width="6" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 9a6 6 0 0012 0M10 15v3M6 18h8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-play" viewBox="0 0 20 20"><path class="f" d="M6 4v12l10-6z"/></symbol>
+<symbol id="i-stop" viewBox="0 0 20 20"><rect class="f" x="5" y="5" width="10" height="10"/></symbol>
+<symbol id="i-rec" viewBox="0 0 20 20"><rect x="5" y="5" width="10" height="10" rx="5" style="fill:var(--rec);stroke:var(--rec)"/></symbol>
+<symbol id="i-click" viewBox="0 0 20 20"><path d="M7 17h6l-1.5-12h-3zM10 11l5-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></symbol>
+<symbol id="i-search" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></symbol>
+<symbol id="i-minus" viewBox="0 0 20 20"><path d="M5 10h10" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 20 20"><path d="M5 10h10M10 5v10" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-x" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-mute" viewBox="0 0 20 20"><path class="f" d="M3 8h3l4-3v10l-4-3H3z"/><path d="M13 8l4 4M17 8l-4 4"/></symbol>
+<symbol id="i-select" viewBox="0 0 20 20"><path class="f" d="M5 3l10 7-4.5 1L13 16l-2 1-2.5-5L5 15z"/></symbol>
+<symbol id="i-draw" viewBox="0 0 20 20"><path class="f" d="M4 16l1-4 8-8 3 3-8 8z"/><path d="M11 6l3 3"/></symbol>
+<symbol id="i-slice" viewBox="0 0 20 20"><path d="M10 2v16"/><path class="f" d="M4 6h4v8H4zM12 6h4v8h-4z"/></symbol>
+<symbol id="i-glue" viewBox="0 0 20 20"><path class="f" d="M3 7h6v6H3zM11 7h6v6h-6z"/><path d="M8 10h4"/></symbol>
+<symbol id="i-fade" viewBox="0 0 20 20"><path d="M3 16h14"/><path class="f" d="M3 16L17 4v12z"/></symbol>
+<symbol id="i-loop" viewBox="0 0 20 20"><path d="M4 9V6h10M12 3l3 3-3 3M16 11v3H6M8 17l-3-3 3-3"/></symbol>
+<symbol id="i-marker" viewBox="0 0 20 20"><path d="M5 18V3"/><path class="f" d="M5 3h10l-3 3.5 3 3.5H5z"/></symbol>
+<symbol id="i-auto" viewBox="0 0 20 20"><path d="M2 14l5-6 4 4 7-8"/><path class="f" d="M6 7h2v2H6zM10 11h2v2h-2z"/></symbol>
+<symbol id="i-snap" viewBox="0 0 20 20"><path class="f" d="M5 3v7a5 5 0 0010 0V3h-3v7a2 2 0 01-4 0V3z"/></symbol>
+<symbol id="i-solo" viewBox="0 0 20 20"><path d="M14 6a4 2.5 0 10-4 2.5 4 2.5 0 11-4 2.5"/></symbol>
+<symbol id="i-punch" viewBox="0 0 20 20"><path d="M2 10h3M15 10h3M5 5v10M15 5v10"/><rect class="f" x="8" y="7" width="4" height="6"/></symbol>
+<symbol id="i-gen" viewBox="0 0 20 20"><path class="f" d="M10 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></symbol>
+<symbol id="i-midi" viewBox="0 0 20 20"><rect x="2" y="5" width="16" height="10"/><path class="f" d="M5 5h2v6H5zM9 5h2v6H9zM13 5h2v6h-2z"/></symbol>
+<symbol id="i-gain" viewBox="0 0 20 20"><path d="M3 17h14"/><path class="f" d="M5 13h2v4H5zM9 9h2v8H9zM13 5h2v12h-2z"/></symbol>
+<symbol id="i-eq" viewBox="0 0 20 20"><path d="M5 3v14M10 3v14M15 3v14"/><path class="f" d="M3 11h4v2H3zM8 6h4v2H8zM13 13h4v2h-4z"/></symbol>
+<symbol id="i-delay" viewBox="0 0 20 20"><path class="f" d="M2 8h3v4H2z"/><path d="M8 8h2v4H8M13 8.5h1.5v3H13M17 9h1v2h-1"/></symbol>
+<symbol id="i-zin" viewBox="0 0 20 20"><path d="M8.5 3.5a5 5 0 110 10 5 5 0 010-10zM12 12l5 5M6 8.5h5M8.5 6v5"/></symbol>
+<symbol id="i-zout" viewBox="0 0 20 20"><path d="M8.5 3.5a5 5 0 110 10 5 5 0 010-10zM12 12l5 5M6 8.5h5"/></symbol>
+<symbol id="i-start" viewBox="0 0 20 20"><path d="M5 4v12"/><path class="f" d="M16 4v12l-9-6z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 20 20"><path d="M3 3h6v6H3zM11 3h6v6h-6zM3 11h6v6H3zM11 11h6v6h-6z"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 20 20"><path d="M5.5 15.5h9a3.5 3.5 0 00.4-7A5 5 0 005.3 8.2 3.7 3.7 0 005.5 15.5z"/></symbol>
+<symbol id="i-help" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M7.8 7.8a2.3 2.3 0 114 1.5c-.9.7-1.8 1.1-1.8 2.4M10 14.2v.3"/></symbol>
+<symbol id="i-file" viewBox="0 0 20 20"><path d="M5 2.5h7l3.5 3.5v11.5H5z"/><path d="M12 2.5V6h3.5M7.5 10h5M7.5 13h5"/></symbol>
+<symbol id="i-dots" viewBox="0 0 20 20"><path class="f" d="M4 4h3v3H4zM8.5 4h3v3h-3zM13 4h3v3h-3zM4 8.5h3v3H4zM8.5 8.5h3v3h-3zM13 8.5h3v3h-3zM4 13h3v3H4zM8.5 13h3v3h-3zM13 13h3v3h-3z"/></symbol>
+<symbol id="i-down" viewBox="0 0 20 20"><path d="M10 3v9M6 8.5l4 4 4-4M3 14v3h14v-3"/></symbol>
+<symbol id="i-up" viewBox="0 0 20 20"><path d="M10 13V4M6 7.5l4-4 4 4M3 14v3h14v-3"/></symbol>
+<symbol id="i-wave" viewBox="0 0 20 20"><path d="M2 10h1.5M5 7v6M8 4v12M11 6v8M14 8v4M17 10h1"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 20 20"><path d="M3 10h13M11.5 5.5L16 10l-4.5 4.5"/></symbol>
+<symbol id="i-swap" viewBox="0 0 20 20"><path d="M3 7h13M12.5 3.5L16 7l-3.5 3.5M17 13H4M7.5 9.5L4 13l3.5 3.5"/></symbol>
+</svg>
+
+<div id="undoToast" class="undo-toast" role="status" hidden><span></span><button id="undoBtn" class="btn" type="button">UNDO</button></div>
+<dialog id="studioLibrary" aria-labelledby="studioHeading">
+  <canvas id="studioWave" width="960" height="216" aria-hidden="true"></canvas>
+  <section class="library-body"><div class="library-heading"><h1 id="studioHeading">MuseArena Studio</h1><button class="theme-switch" type="button" role="switch" aria-label="Dark mode" aria-checked="false" title="Dark mode"><span aria-hidden="true"></span></button></div>
+  <label for="studioName">Project name</label><input id="studioName" maxlength="160" placeholder="Untitled" type="text">
+  <div class="library-actions"><button class="btn primary" id="newStudioProject">New project</button><button class="btn" id="resumeStudio">Continue session</button>
+  <label class="btn library-file">Open file<input type="file" id="libraryImport" accept=".json"></label></div>
+  <div id="savedStudios" aria-label="Saved projects"></div><p id="libraryStatus" role="status"></p></section>
+</dialog>
+<div id="intro" class="intro" hidden><video id="introFilm" muted playsinline preload="none" aria-hidden="true" src="assets/art/studio-flight.mp4"></video><img id="introLogo" src="assets/art/logo.webp" alt="MuseArena"><div id="introWord" aria-hidden="true"></div><button id="skipIntro" class="btn">SKIP INTRO</button></div>
+<div class="app">
+  <header class="top">
+    <a class="brand" href="./" title="MuseArena">
+      <img src="assets/art/logo-64.webp" width="40" height="40" alt="">
+      <span class="brand-word">MUSEARENA</span>
+      <span class="brand-tag" aria-hidden="true">MUSIC<br>PRODUCTION<br>FOR MODERN<br>CREATORS</span>
+    </a>
+    <nav class="view-tabs" role="tablist" aria-label="Interfaces">
+      <button type="button" role="tab" data-view-tab="overview" aria-selected="true" title="Everything on one page (Alt+1)">OVERVIEW</button>
+      <button type="button" role="tab" data-view-tab="timeline" aria-selected="false" title="Full-screen timeline, piano roll, audio editing (Alt+2)">TIMELINE</button>
+      <button type="button" role="tab" data-view-tab="beat" aria-selected="false" title="Live take, pads/keys and step grid (Alt+3)">BEAT MAKER</button>
+      
+    </nav>
+    <div class="top-tools">
+      <button class="theme-switch" type="button" role="switch" aria-label="Dark mode" aria-checked="false" title="Dark mode"><span aria-hidden="true"></span></button>
+      <div class="status" id="status" role="status">LOADING LIBRARY</div>
+      <button id="quickSave" class="icon-btn" type="button" title="Autosaved in this browser. Click to download the project as JSON (Ctrl+S)" aria-label="Save project as JSON"><svg class="i"><use href="#i-cloud"/></svg><span id="saveDot" class="save-dot" aria-hidden="true"></span></button>
+      <button id="helpBtn" class="icon-btn" type="button" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts" aria-expanded="false" aria-controls="helpPanel"><svg class="i"><use href="#i-help"/></svg></button>
+    </div>
+    <section class="project-bar" aria-label="Project">
+      <label class="field project-name"><svg class="i" aria-hidden="true"><use href="#i-file"/></svg><span class="pn-stack"><span class="lab">PROJECT</span><input id="projectName" type="text" value="Untitled" maxlength="160" aria-label="Project name"></span></label>
+      <button class="btn" id="projectLibraryBtn">PROJECTS</button>
+      <button id="editPattern" class="btn"><svg class="i"><use href="#i-dots"/></svg>PATTERN TOOLS</button>
+      <button id="saveProject" class="btn"><svg class="i"><use href="#i-down"/></svg>SAVE PROJECT</button>
+      <button id="loadProject" class="btn"><svg class="i"><use href="#i-up"/></svg>LOAD JSON</button>
+      <button id="exportMidi" class="btn" title="PATTERN mode: this pattern. SONG mode: the whole arrangement."><svg class="i"><use href="#i-midi"/></svg>EXPORT MIDI</button>
+      <button id="exportWav" class="btn" title="Render to a WAV file with lane and clip FX. PATTERN mode: this pattern. SONG mode: the whole arrangement."><svg class="i"><use href="#i-wave"/></svg>EXPORT WAV</button>
+      <input id="projectFile" type="file" accept=".json,application/json" hidden>
+    </section>
+  </header>
+
+  <div class="transport-bar">
+    <div class="transport">
+      <button id="rewindBtn" class="btn tb sq" aria-label="Return to start" title="Return to start (Home)"><svg class="i"><use href="#i-start"/></svg></button>
+      <button id="playBtn" class="btn tb primary" title="Play / stop (Space)" aria-pressed="false"><svg class="i"><use href="#i-play"/></svg><span>PLAY</span></button>
+      <button id="stopBtn" class="btn tb sq" type="button" aria-label="Stop" title="Stop and return to where you started"><svg class="i"><use href="#i-stop"/></svg></button>
+      <button id="recArm" class="btn tb sq rec-arm" type="button" aria-pressed="true" aria-label="Record what you play" title="RECORD: what you play is kept in the live take"><span class="rec-dot" aria-hidden="true"></span></button>
+      <button id="humBtn" class="btn tb" title="Hum a tune" aria-pressed="false"><svg class="i"><use href="#i-mic"/></svg><span>HUM</span></button><details class="voice-menu"><summary class="btn">VOICE</summary><div>
+        <button class="btn" id="voiceRecord" type="button">Record voice</button>
+        <button class="btn" id="voiceImport" type="button">Import voice file</button>
+        <input id="voiceFile" type="file" accept="audio/*" hidden><audio id="voicePlayback" aria-label="Play voice recording" controls hidden></audio>
+      </div></details><meter id="humLevel" min="0" max="1" value="0" aria-label="Microphone input level"></meter>
+      <span class="tb-sep" aria-hidden="true"></span>
+      <span id="songClock" class="clock">0.000 s</span>
+      <span class="tb-slash" aria-hidden="true"></span>
+      <label class="field bpm-field" title="Stop playback to change the tempo"><span class="lab">BPM</span><input id="bpm" type="number" min="40" max="220" value="90"></label>
+      <label class="mix-meter"><span>OUT</span><meter id="mixLevel" min="-60" max="0" low="-18" high="-6" optimum="-24" value="-60" aria-label="Output peak level in dBFS"></meter></label>
+      <span class="tb-sep" aria-hidden="true"></span>
+      <div class="mode-switch" role="group" aria-label="Playback mode">
+        <button id="modePattern" class="btn" aria-pressed="false">PATTERN</button>
+        <button id="modeSong" class="btn on" aria-pressed="true">SONG</button>
+      </div>
+      <label class="field check loop-field"><span class="lab">LOOP</span><input id="songLoop" type="checkbox"></label>
+      <span class="tb-sep" aria-hidden="true"></span>
+      <button id="metroBtn" class="btn tb icon" title="Metronome" aria-label="Metronome" aria-pressed="false"><svg class="i"><use href="#i-click"/></svg><span>CLICK</span></button>
+      <span id="beatLamp" class="lamp" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <div id="helpPanel" class="help-panel" role="dialog" aria-label="Keyboard shortcuts" hidden>
+    <div class="help-head"><h2>SHORTCUTS</h2><button id="helpClose" class="btn" type="button" aria-label="Close shortcuts">CLOSE</button></div>
+    <dl>
+      <dt>Space</dt><dd>Play / stop</dd>
+      <dt>Ctrl+C / Ctrl+V</dt><dd><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg> Copy / <svg class="i" aria-hidden="true"><use href="#i-paste"/></svg> paste clips or selected notes</dd>
+      <dt>Ctrl+D</dt><dd>Duplicate selected clip</dd>
+      <dt>Home</dt><dd>Back to start</dd>
+      <dt>A W S E D F T G Y H U J K O L P</dt><dd>Play notes</dd>
+      <dt>Z / X</dt><dd>Octave down / up</dd>
+      <dt>1–4 · Q–R · A–F · Z–V</dt><dd>Hit pads</dd>
+      <dt>V · B · C</dt><dd>Select · Draw · Slice tool</dd>
+      <dt>K</dt><dd>Cut at the cursor</dd>
+      <dt>G</dt><dd>Glue selected clips</dd>
+      <dt>Del</dt><dd>Delete selected clip or note</dd>
+      <dt>Ctrl+Z / Ctrl+Shift+Z</dt><dd>Undo / redo</dd>
+      <dt>Ctrl+S</dt><dd>Save project JSON</dd>
+      <dt>Alt+1…3</dt><dd>Overview · Timeline · Beat maker</dd>
+      <dt>Alt + drag</dt><dd>Bypass snap</dd>
+    </dl>
+  </div>
+
+  <main class="stage lit"><div id="playlistPanel" class="playlist-panel">
+    <section class="arrangement" aria-label="Arrangement timeline">
+      <div class="sec-head"><h2 class="display">ARRANGEMENT</h2><span class="hint">SECONDS / MS · Select a pattern or lane to record · Alt bypasses snap</span></div>
+      <div class="pattern-strip"><div id="patternBank" class="pattern-bank" aria-label="Patterns to arrange"></div><input id="audioFile" type="file" accept="audio/*,.wav,.mp3,.ogg,.m4a,.flac,.aif,.aiff" hidden></div>
+      
+      <div class="timeline-tools">
+        <button id="toolselect" class="btn" aria-pressed="true"><svg class="i"><use href="#i-select"/></svg>SELECT V</button>
+        <button id="tooldraw" class="btn" aria-pressed="false"><svg class="i"><use href="#i-draw"/></svg>DRAW B</button>
+        <button id="toolslice" class="btn" aria-pressed="false"><svg class="i"><use href="#i-slice"/></svg>SLICE C</button>
+        <button id="cutCursor" class="btn" title="Cut at the cursor (K): selected clips there, otherwise every clip under the cursor. With SLICE, Shift-click cuts every lane."><svg class="i"><use href="#i-slice"/></svg>CUT K</button>
+        <button id="glueClips" class="btn"><svg class="i"><use href="#i-glue"/></svg>GLUE G</button>
+        <button id="openRoll" class="btn" type="button" title="Edit the notes of the selected clip or pattern (opens the Timeline view)"><svg class="i"><use href="#i-grid"/></svg>NOTES</button>
+        <label class="field"><span class="lab">SNAP</span><select id="snap"><option value="0">OFF</option><option value="0.01">10 ms</option><option value="0.1" selected>100 ms</option><option value="1">1 s</option></select></label>
+        <button id="followPlayhead" class="btn sq" aria-label="Follow playhead" title="Follow playhead" aria-pressed="true"><svg class="i" aria-hidden="true"><use href="#i-follow"/></svg></button>
+        <button id="zoomOut" class="btn sq" aria-label="Zoom out" title="Zoom out"><svg class="i"><use href="#i-zout"/></svg></button><button id="zoomIn" class="btn sq" aria-label="Zoom in" title="Zoom in"><svg class="i"><use href="#i-zin"/></svg></button>
+        <span class="tools-spacer" aria-hidden="true"></span>
+        <button id="addClip" class="btn" title="Place the selected pattern on the selected lane"><svg class="i"><use href="#i-plus"/></svg>ADD CLIP</button><button id="importAudio" class="btn" type="button" title="Add an audio file (or drag one onto a lane)"><svg class="i"><use href="#i-wave"/></svg>AUDIO</button>
+      </div>
+      <details id="timelineOptions" class="timeline-options"><summary class="lab">TIMELINE OPTIONS</summary><div class="timeline-options-body">
+        <button id="addLane" class="btn">ADD LANE</button>
+        <label class="field"><span class="lab">LENGTH S</span><input id="songLength" type="number" min="0.01" max="3600" step="0.001" value="64"></label>
+        <label class="field"><span class="lab">FROM S</span><input id="loopFrom" type="number" min="0" step="0.001" value="0"></label>
+        <label class="field"><span class="lab">TO S</span><input id="loopTo" type="number" min="0.001" step="0.001" value="8"></label>
+      </div></details>
+      <div id="timelineScroll" class="timeline-scroll" tabindex="0" aria-label="Scrollable arrangement"><div id="timeline" class="timeline"></div></div>
+      <section id="pianoRoll" class="piano-roll" tabindex="-1" aria-label="Piano roll" hidden>
+        <div class="roll-bar">
+          <span id="rollTitle" class="lab">PIANO ROLL</span>
+          <label class="field"><span class="lab">LAYER</span><select id="rollLayer" aria-label="Layer to edit"></select></label>
+          <label class="field" title="Off keeps notes exactly where you put them. Hold Alt while dragging to bypass snap."><span class="lab">SNAP</span><select id="rollSnap" aria-label="Piano roll snap"><option value="">OFF (free)</option><option value="0.001">1 ms</option><option value="0.01">10 ms</option><option value="16th">1/16 beat</option><option value="8th">1/8 beat</option><option value="beat">beat</option></select></label>
+          <span id="rollInfo" class="roll-info" hidden>
+            <label class="field"><span class="lab">START MS</span><input id="rollStart" type="number" step="0.1" min="0"></label>
+            <label class="field"><span class="lab">LENGTH MS</span><input id="rollLen" type="number" step="0.1" min="1"></label>
+            <label class="field"><span class="lab">STRENGTH %</span><input id="rollVel" type="number" step="1" min="1" max="100"></label>
+          </span>
+          <span id="rollHint" class="hint mono"></span>
+          <button id="rollZoomOut" class="btn" type="button" aria-label="Zoom piano roll out">−</button><button id="rollZoomIn" class="btn" type="button" aria-label="Zoom piano roll in">+</button>
+          <button id="rollClose" class="btn" type="button" aria-label="Close piano roll">CLOSE</button>
+        </div>
+        <div id="rollScroll" class="roll-scroll"><canvas id="rollCanvas" tabindex="0" aria-label="Edit notes"></canvas><span id="rollPlayhead" aria-hidden="true" hidden></span></div>
+      </section>
+      <div id="arrangementEmpty" class="hint mono"><p>NO CLIPS YET — RECORD A PATTERN, THEN DRAG IT ONTO A LANE.</p><button id="generatePart" class="btn" type="button">Generate a part</button></div>
+
+      <p class="hint">SONG plays seconds independently of BPM; PATTERN loops the selected pattern. Shift-click selects multiple clips for glue. Ctrl-drag duplicates. Click the time strip to move the cursor (PLAY starts there, K cuts there); drag it to set the loop. SLICE shows a razor line: click a clip to cut it, Shift-click to cut every lane.</p>
+    </section>
+
+    </div>
+    <div id="playerSplitter" class="player-splitter" role="separator" tabindex="0" aria-label="Resize instrument player" aria-orientation="horizontal" aria-controls="patternEditor" aria-valuemin="300" aria-valuemax="600" aria-valuenow="420"></div>
+    <section id="patternEditor" class="pattern-editor player-dock" aria-labelledby="editorTitle">
+  <header class="editor-header"><h2 id="editorTitle" class="lab">PATTERN EDITOR</h2><div id="tuneStrip" class="tune-strip" aria-label="AI tune"></div>         <button id="closeEditor" class="btn" aria-label="Collapse player" aria-expanded="true" aria-controls="playerContent">COLLAPSE</button></header>
+  <div id="playerContent" class="editor-content">
+    <section class="beat-maker" aria-label="Beat maker">
+      <div class="beat-bar" role="toolbar" aria-label="Beat maker controls">
+        <span class="lab beat-title">BEAT MAKER</span>
+        <span class="beat-mode" role="radiogroup" aria-label="How to make the beat"><button id="modeLive" class="btn" type="button" role="radio" aria-checked="true" title="Play keys or pads; what you play is recorded with its exact timing">LIVE</button><button id="modeStep" class="btn" type="button" role="radio" aria-checked="false" title="Place hits on a grid of steps for exact timing; nothing you play is recorded here">STEP GRID</button></span>
+        <button id="beatPlay" class="btn" type="button" aria-label="Play beat" aria-pressed="false" title="Loop just this beat"><svg class="i"><use href="#i-play"/></svg><span>PLAY BEAT</span></button>
+        <button id="beatHum" class="btn" type="button" aria-label="Hum a tune" aria-pressed="false" title="Hum a tune; it becomes a beat on the current instrument"><svg class="i"><use href="#i-mic"/></svg><span>HUM</span></button>
+
+        <button id="beatNew" class="btn" type="button" aria-label="New empty beat" title="Start a new empty beat"><svg class="i"><use href="#i-plus"/></svg><span>NEW</span></button>
+        <button id="beatToTimeline" class="btn primary" type="button" aria-label="Add this beat to the timeline" title="Place this beat at the end of the selected timeline lane"><svg class="i"><use href="#i-loop"/></svg><span class="long">ADD TO TIMELINE</span><span class="short">TO TIMELINE</span></button>
+      </div>
+      <div id="liveSlotNarrow" class="live-slot narrow"><div id="beatView" class="beat-roll-wrap" draggable="true" title="Drag onto a timeline lane"><div class="take-plot"><canvas id="beatRoll" class="beat-roll" role="img" aria-label="Beat notes"></canvas><span id="beatPlayhead" class="beat-playhead" hidden></span></div><span id="recBadge" class="rec-badge mono" role="status" aria-live="polite" hidden></span><span id="beatTitle" class="beat-title-tag mono"></span><span class="live-actions"><button id="liveRec" class="rec-switch" type="button" role="switch" aria-checked="true" title="RECORD on: whatever you play is kept here. Switch off to play without keeping."><span class="rec-switch-label">RECORD</span><span class="rec-switch-track" aria-hidden="true"><span class="rec-switch-knob"></span></span></button><button id="livePlay" class="btn" type="button" title="Hear the live take"><svg class="i" aria-hidden="true"><use href="#i-play"/></svg> PLAY</button><button id="liveKeep" class="btn" type="button" title="Add this take to the current beat as a new layer">ADD TO BEAT</button><button id="liveClear" class="btn" type="button" title="Clear the live take" aria-label="Clear live take"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></span><p id="beatInfo" class="mono beat-info" role="status" aria-live="polite"></p></div></div>
+    </section>
+    <div class="hum-panel"><details id="humOptions"><summary class="lab">HUM OPTIONS</summary><div class="hum-options-body">
+      <label class="field"><span class="lab">SCALE</span><select id="humSnap" aria-label="Hum scale"><option value="">NO SCALE SNAP</option><option value="0">C major</option><option value="1">C# major</option><option value="2">D major</option><option value="3">Eb major</option><option value="4">E major</option><option value="5">F major</option><option value="6">F# major</option><option value="7">G major</option><option value="8">Ab major</option><option value="9">A major</option><option value="10">Bb major</option><option value="11">B major</option></select></label>
+      <label class="field"><span class="lab">MIN NOTE MS</span><input id="humMinNote" type="number" min="20" max="1000" value="80" aria-label="Minimum hum note milliseconds"></label>
+    </div></details><span id="humStatus" class="hint mono" role="status" aria-live="polite">HUM records your voice directly into a tune.</span><button id="humCancel" class="btn" type="button" hidden>CANCEL HUM</button></div>
+    <section class="inst-head">
+      <figure class="art"><img id="instArt" alt=""></figure>
+      <div class="title">
+        <div id="instCat" class="lab"></div>
+        <h1 id="instName">Pick an instrument</h1><select id="playerInstrument" aria-label="Player instrument"></select>
+        <div id="instMeta" class="meta mono"></div>
+      </div>
+      <div id="liveSlotWide" class="live-slot"></div>
+      <div class="flowbox" id="flowBox">
+        <div class="flow-top"><span class="lab">FLOW</span><span id="flowVal" class="mono big">25</span></div>
+        <input id="flow" type="range" min="0" max="100" value="25" aria-label="Flow">
+        <div class="flow-ends lab"><span>SHARP</span><span>SUNG</span></div>
+        <div id="flowDetail" class="flow-detail mono"></div>
+        <details id="flowHelp"><summary class="lab">FLOW GUIDE</summary><p class="hint">Sharp attacks at 0; longer releases toward 50; legato and pitch glide toward 100. Each layer keeps its FLOW value.</p><div class="flow-presets"><button class="btn" type="button" data-flow="0">0</button><button class="btn" type="button" data-flow="25">25</button><button class="btn" type="button" data-flow="50">50</button><button class="btn" type="button" data-flow="75">75</button><button class="btn" type="button" data-flow="100">100</button></div></details>
+      </div>
+    </section>
+
+    <section class="controls">
+      <label class="field" title="How long one beat (pattern) lasts before it repeats. 1 bar = 4 beats; at 90 BPM that is 2.67 s. Fit to notes = repeat straight after what you played, no gap."><span class="lab">BEAT LENGTH</span><select id="bars"><option value="1" selected>1 bar</option><option value="2">2 bars</option><option value="4">4 bars</option><option value="8">8 bars</option><option value="fit">Fit to notes</option></select></label>
+      <label class="field" title="How hard each key or pad is struck: louder and brighter to the right (MIDI velocity)."><span class="lab">HIT STRENGTH</span><input id="vel" type="range" min="0.1" max="1" step="0.05" value="0.8"></label>
+      <label class="field"><span class="lab">REVERB</span><input id="rev" type="range" min="0" max="0.6" step="0.02" value="0.15"></label>
+      <div class="field melodic-only"><span class="lab">OCTAVE</span>
+        <button id="octDown" class="btn sq" title="Octave down (Z)"><svg><use href="#i-minus"/></svg></button>
+        <span id="octVal" class="mono big">4</span>
+        <button id="octUp" class="btn sq" title="Octave up (X)"><svg><use href="#i-plus"/></svg></button>
+      </div>
+      <label class="field pads-only check"><input id="choke" type="checkbox"><span class="lab">CHOKE</span></label>
+      <span id="midiState" class="lab ok"></span>
+    </section>
+
+    <section id="keyboardView" class="view">
+      <div class="piano-wrap"><div id="piano" class="piano"></div></div>
+      <p class="hint mono">KEYS A W S E D F T G Y H U J K O L P · Z/X OCTAVE · SHIFT SUSTAIN · MIDI IN · <span class="dotkey"></span> RECORDED NOTE</p>
+    </section>
+
+    <section id="padsView" class="view">
+      <div id="pads"></div>
+      <p class="hint mono">KEYS 1–4 · Q–R · A–F · Z–V HIT THE FIRST 16 PADS · REPEATED HITS ROTATE THROUGH VARIATIONS</p>
+    </section>
+
+    <section id="stepGrid" class="step-grid" aria-label="Step grid">
+      <div class="step-bar"><span id="stepTitle" class="lab">STEP GRID</span>
+        <button id="stepAddRow" class="btn" type="button" title="Add a row for the instrument picked on the left (next free pad or note)">+ ROW</button>
+        <button id="stepAddKit" class="btn" type="button" title="Add a row for every pad of the current drum kit">+ WHOLE KIT</button>
+        <span class="hint mono">click a step to add/remove a hit · Alt+drag a lit step to nudge it in ms · hits recorded in LIVE keep their exact timing</span></div>
+      <div id="stepRows" class="step-rows"></div>
+      <p id="stepEmpty" class="hint mono">Pick an instrument on the left, then + ROW (or + WHOLE KIT for a drum kit like Dholak (strokes)).</p>
+    </section>
+    <details id="patternDetails" class="pattern-details"><summary class="lab">PATTERN DETAILS (ADVANCED): length, layers, rename</summary><section class="layers">
+      <div class="pattern-tools">
+        <label class="field"><span class="lab">PATTERN</span><select id="patternPicker" aria-label="Current pattern"></select></label>
+        <input id="patternName" type="text" maxlength="160" aria-label="Pattern name">
+        <label class="field"><span class="lab">LENGTH S</span><input id="patternLength" type="number" min="0.001" max="3600" step="0.001" aria-label="Pattern length seconds"></label>
+        <button id="newPattern" class="btn">NEW</button>
+        <button id="duplicatePattern" class="btn">DUPLICATE</button>
+        <button id="deletePattern" class="btn">DELETE PATTERN</button>
+      </div>
+      <div class="sec-head"><span class="lab">LAYERS</span><span class="hint">Press REC, play after the count-in, the take loops. Each layer keeps its instrument.</span></div>
+      <div id="layers"></div>
+    </section></details>
+  </div>
+</section>
+  </main>
+  <aside class="lib lit">
+    <label class="search"><svg><use href="#i-search"/></svg><input id="search" type="search" aria-label="Search instruments" placeholder="Search — sitar, tabla, kalimba"></label>
+    <nav id="cats" class="cats" aria-label="Categories"></nav>
+    <div id="list" class="list"></div>
+    <button id="genTuneCta" class="gen-cta" type="button" title="Open the AI tab to generate a tune (Alt+4)"><svg class="i"><use href="#i-gen"/></svg><span>GENERATE A TUNE</span><svg class="i arrow"><use href="#i-arrow"/></svg></button>
+  </aside>
+<aside id="inspector" class="inspector lit" aria-label="Inspector">
+  <h2 class="lab">INSPECTOR</h2><div id="inspectorTarget" class="mono inspector-target"></div>
+  <div class="inspector-scope"><label class="field"><span class="lab">FX</span><select id="fxScope" aria-label="Effects scope"><option value="lane">LANE DEFAULT</option><option value="clip">CLIP OVERRIDE</option></select></label><button id="fxInherit" class="btn" hidden>USE LANE FX</button></div>
+  <div id="fxControls"></div>
+  <div class="delay-options"><label class="field"><span class="lab">SYNC</span><select id="fxSync" aria-label="Delay sync"><option value="off">FREE MS</option><option>1/16</option><option>1/8</option><option>1/4</option><option>1/2</option></select></label><label class="field check"><input id="fxPingPong" type="checkbox"><span class="lab">PING-PONG</span></label></div>
+        <div id="clipInspector" class="clip-inspector" hidden>
+        <span class="lab">SELECTED CLIP</span>
+        <label class="field"><span class="lab">START S</span><input id="clipStart" type="number" min="0" step="0.001"></label>
+        <label class="field"><span class="lab">LENGTH S</span><input id="clipLength" type="number" min="0.001" step="0.001"></label>
+        <label class="field"><span class="lab">REPEAT S</span><input id="clipLoopLength" type="number" min="0.01" step="0.001"></label>
+        <label class="field"><span class="lab">TRIM S</span><input id="clipTrim" type="number" min="0" step="0.001"></label>
+        <label class="field"><span class="lab">LANE</span><input id="clipLane" type="number" min="1" step="1"></label>
+        <label class="field"><span class="lab">OFFSET MS</span><input id="clipOffset" type="number" min="-1000" max="1000" step="1"></label>
+        <label class="field"><span class="lab">FADE IN S</span><input id="clipFadeIn" type="number" min="0" step="0.01"></label>
+        <label class="field"><span class="lab">FADE OUT S</span><input id="clipFadeOut" type="number" min="0" step="0.01"></label>
+        <span id="audioClipTools" class="audio-clip-tools" hidden>
+          <button id="clipReverse" class="btn" type="button" title="Play this audio backwards (makes a new version; the original stays in the pattern bar)">REVERSE</button>
+          <label class="field" title="Change the length without changing the pitch: 2 = twice as long, 0.5 = half"><span class="lab">STRETCH ×</span><input id="clipStretch" type="number" min="0.25" max="4" step="0.05" value="1"></label>
+          <button id="clipStretchApply" class="btn" type="button">STRETCH</button>
+        </span>
+        <button id="editClipPattern" class="btn">EDIT PATTERN</button>
+        <button id="editClipNotes" class="btn" type="button" title="Edit this clip's notes in the piano roll">EDIT NOTES</button>
+        <button id="duplicateClip" class="btn" title="Duplicate selected clip (Ctrl+D)"><svg class="i" aria-hidden="true"><use href="#i-duplicate"/></svg>DUPLICATE CLIP</button>
+        <button id="sliceClip" class="btn">SLICE AT MIDDLE</button>
+        <button id="deleteClip" class="btn">DELETE CLIP</button>
+      </div>
+  <details class="preferences"><summary class="lab">APPEARANCE</summary><label class="field"><span class="lab">THEME</span><select id="themeSetting"><option value="system">SYSTEM</option><option value="light">LIGHT</option><option value="dark">DARK</option></select></label><label class="field"><span class="lab">MOTION</span><select id="motionSetting" aria-label="Motion"><option value="system">SYSTEM</option><option value="on">ON</option><option value="off">OFF</option></select></label><button id="replayIntro" class="btn">REPLAY INTRO</button><label class="field check"><input id="lightSetting" type="checkbox" checked><span class="lab">KESAR LIGHT</span></label></details>
+</aside>
+    <section class="generator lit" aria-label="Generate a stem">
+<div class="ai-hum" aria-label="Hum to tune">
+  <span class="lab">HUM TO TUNE</span>
+  <button id="aiHum" class="btn primary" type="button"><svg class="i"><use href="#i-mic"/></svg><span>HUM A TUNE</span></button>
+  <label class="field"><span class="lab">PLAY IT ON</span><select id="aiHumInstrument" aria-label="Instrument for the hummed tune"></select></label>
+  <span id="aiHumStatus" class="hint mono" role="status" aria-live="polite">Hum or sing one line; it becomes notes on the instrument you pick (glides kept), placed on the timeline.</span>
+</div>
+<div id="generatedResult" class="generated-result" hidden><span class="lab strip-title">AI TUNE</span><span id="generatedVoice" class="lab"></span><label class="field strip-voice"><span class="lab">PLAY IT ON</span><select id="stripInstrument" aria-label="Instrument for the generated tune"></select></label><span id="stripStatus" class="strip-status" role="status" aria-live="polite"></span><span id="tuneClock" class="mono">0.0s</span><button id="auditionGenerated" class="btn" type="button">HEAR TUNE</button><button id="abOriginal" class="btn" type="button" aria-pressed="false">A/B: original</button><audio id="stemPreview" preload="none" hidden></audio><a id="generatedMidi" class="btn secondary" download title="Original transcription; percussion exports use GM drum notes" hidden>Download .mid</a></div>
+<div id="generateTakes" class="generate-takes" role="group" aria-label="Generated versions" hidden></div>
+      <details id="generatePanel"><summary class="lab">GENERATE A TUNE</summary>
+
+        <form id="generateForm">
+          <label class="lab" for="generatePrompt">PROMPT</label>
+          <textarea id="generatePrompt" maxlength="1500" required rows="3" placeholder="Describe one instrument and how it should play…"></textarea>
+          <fieldset id="genreChips"><legend class="lab">GENRE</legend></fieldset>
+          <fieldset id="roleChips"><legend class="lab">INSTRUMENT ROLE</legend></fieldset>
+          <div class="generate-fields">
+            <label class="field check"><input id="generateMono" type="checkbox" checked><span class="lab">MONOPHONIC</span></label>
+          </div>
+          <fieldset id="generatePadMap" hidden><legend class="lab">ONSET → PAD MAPPING</legend>
+            <label class="field"><span class="lab">LOW</span><select id="generatePadLow" aria-label="Low onset pad"></select></label>
+            <label class="field"><span class="lab">MID</span><select id="generatePadMid" aria-label="Mid onset pad"></select></label>
+            <label class="field"><span class="lab">HIGH</span><select id="generatePadHigh" aria-label="High onset pad"></select></label>
+          </fieldset>
+          <div class="generate-fields">
+            <label class="field"><span class="lab">MODEL</span><select id="generateModel" aria-label="Generation model" disabled><option>Loading models…</option></select></label>
+            <label class="field"><span class="lab">KEY</span><select id="generateKey" aria-label="Generation key"><option>C</option><option>C#</option><option>D</option><option>Eb</option><option>E</option><option>F</option><option>F#</option><option>G</option><option>Ab</option><option>A</option><option>Bb</option><option>B</option></select></label>
+            <label class="field"><span class="lab">VERSIONS</span><select id="generateCount" aria-label="Number of versions to generate"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>
+            <label class="field"><span class="lab">LEN S</span><input id="generateLength" aria-label="Generation length seconds" type="number" min="5" max="240" step="1" value="30"></label>
+            <div class="voice-generate"><label class="field"><span class="lab">INSTRUMENT</span><select id="generateInstrument" aria-label="Instrument"></select></label><button id="generateButton" class="btn primary" type="submit" disabled><svg class="i"><use href="#i-gen"/></svg>GENERATE</button></div>
+            <button id="refreshModels" class="btn" type="button">REFRESH MODELS</button>
+            <button id="retryTranscription" class="btn" type="button" hidden>RETRY CONVERSION</button>
+          </div>
+          <p id="generateModelInfo" class="hint"></p>
+          <p class="hint">Hear the AI's tune on your instrument. After generating, change Instrument to hear the same notes in a different voice — no regeneration. Uses Gemini quota; each version is one generation.</p>
+          <p id="generateStatus" class="mono hint" role="status" aria-live="polite"></p>
+        </form>
+
+
+      </details>
+    </section>
+</div>
+
+<script type="module" src="app.js"></script>
+<nav id="phoneJump" class="phone-jump" aria-label="Jump between timeline and player">
+  <button type="button" class="btn" data-jump="playlistPanel" aria-pressed="true">TIMELINE</button>
+  <button type="button" class="btn" data-jump="patternEditor" aria-pressed="false">PLAYER</button>
+</nav>
+</body>
+</html>
