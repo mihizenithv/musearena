@@ -484,53 +484,6 @@ async function boot() {
     const pattern = await importAudio(file, arrangementUI.getSelection().lane, arrangementUI.getCursor());
     if (pattern) { setVoicePreview(file); $("voicePlayback").hidden = false; }
   };
-  const picker = $("melodyInstrument");
-  for (const instrument of library.filter(item => item.kind === "melodic")) {
-    picker.add(new Option(instrument.name, instrument.id));
-  }
-  if (current?.kind === "melodic") picker.value = current.id;
-  $("generatePart").onclick = () => viewsUI.set("ai");
-  $("melodyForm").onsubmit = async event => {
-    event.preventDefault();
-    const button = $("melodyGenerate"), status = $("melodyStatus");
-    if (button.disabled) return;
-    const target = project, bpm = target.bpm, steps = Number($("melodyBars").value)*16;
-    const instrument = library.find(item => item.id === picker.value);
-    const primer = $("melodySeed").value === "fall" ? [26,0,23,0] : [14,0,18,0];
-    let worker;
-    button.disabled = true;
-    status.textContent = "Composing on this device…";
-    try {
-      const context = audio();
-      await context.resume();
-      worker = new Worker("./melody-worker.js");
-      const tokens = await new Promise((resolve,reject) => {
-        worker.onmessage = ({data}) => data.error ? reject(Error(data.error)) : resolve(data.events);
-        worker.onerror = () => reject(Error("The melody worker could not start."));
-        worker.postMessage({steps,primer});
-      });
-      const events = [], beat = 60 / bpm / 4;
-      let held;
-      for (let i=0; i<=tokens.length; i++) {
-        const token = tokens[i] ?? 1;
-        if (!token) continue;
-        if (held !== undefined) events.push({type:"off",m:held,t:i*beat});
-        held = token>=2 ? token+46 : undefined;
-        if (held !== undefined) events.push({type:"on",m:held,t:i*beat,vel:.8});
-      }
-      const inst = new Instrument(instrument);
-      if (await inst.load()) throw Error("Instrument samples could not load. Try again.");
-      if (target !== project) throw Error("Project changed. Generate again in the new project.");
-      if (project.patterns.length >= 128) throw Error("The project has reached its pattern limit.");
-      const pattern = {id:newId(), name:"AI melody " + (project.patterns.length+1), lengthSec:steps*beat,
-        layers:[{id:newId(), instrumentId:instrument.id, def:instrument, inst, flow:25, choke:false, muted:false, events}]};
-      if (playing) togglePlay();
-      editProject(() => { project.patterns.push(pattern); project.activePatternId=pattern.id; });
-      setPlaybackMode("pattern"); viewsUI.set("beat"); togglePlay();
-      status.textContent = pattern.name + " added to your patterns.";
-    } catch(error) { status.textContent = error.message; }
-    finally { worker?.terminate(); button.disabled = false; }
-  };
   mountLibrary({ snapshot: () => projectData(project), create: createProject, load: loadProjectText,
     pause: () => { if (humming) humUI?.cancel(); stopLivePreview(); if (playing) togglePlay(); $("voicePlayback").pause(); },
     enter: () => { sessionStorage.setItem("musearena.studioEntered","1"); viewsUI.set("beat"); }

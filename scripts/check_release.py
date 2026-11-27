@@ -19,7 +19,7 @@ for path in root.rglob("*"):
         continue
     assert not path.name.startswith(".env"), rel
     if rel.parts[0] == "public":
-        assert (path.suffix in allowed or rel.as_posix() == "public/player/model/melody.bin") and not any(p.startswith(".") for p in rel.parts), rel
+        assert path.suffix in allowed and not any(p.startswith(".") for p in rel.parts), rel
     data = path.read_bytes()
     assert not any(s in data for s in secrets), rel
     assert not any(re.search(p, data) for p in patterns), rel

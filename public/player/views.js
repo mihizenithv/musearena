@@ -1,7 +1,7 @@
 // Interface tabs: OVERVIEW (the original all-in-one page, unchanged) plus full-screen TIMELINE, BEAT MAKER and AI views.
 // All views share one project and one audio engine; switching only rearranges the page (CSS on body[data-view]),
 // so nothing reloads and playback continues.
-const VIEWS = ["overview", "timeline", "beat", "ai"];
+const VIEWS = ["overview", "timeline", "beat"];
 const $ = id => document.getElementById(id);
 
 export function mountViews({ onChange = () => {} } = {}) {
