@@ -60,7 +60,7 @@ export function mountChrome() {
   $("genTuneCta").onclick = () => {
     document.querySelector('[data-view-tab="ai"]').click();
     $("generatePanel").open = true;
-    requestAnimationFrame(() => $("generatePrompt")?.focus());
+    requestAnimationFrame(() => $("melodySeed")?.focus());
   };
 }
 

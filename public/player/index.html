@@ -80,7 +80,7 @@
       <button type="button" role="tab" data-view-tab="timeline" aria-selected="false" title="Full-screen timeline, piano roll, audio editing (Alt+2)">TIMELINE</button>
       <button type="button" role="tab" data-view-tab="beat" aria-selected="false" title="Live take, pads/keys and step grid (Alt+3)">BEAT MAKER</button>
       
-    </nav>
+    <button type="button" role="tab" data-view-tab="ai" aria-selected="false">AI MELODY</button></nav>
     <div class="top-tools">
       <button class="theme-switch" type="button" role="switch" aria-label="Dark mode" aria-checked="false" title="Dark mode"><span aria-hidden="true"></span></button>
       <div class="status" id="status" role="status">LOADING LIBRARY</div>
@@ -323,31 +323,14 @@
 <div id="generateTakes" class="generate-takes" role="group" aria-label="Generated versions" hidden></div>
       <details id="generatePanel"><summary class="lab">GENERATE A TUNE</summary>
 
-        <form id="generateForm">
-          <label class="lab" for="generatePrompt">PROMPT</label>
-          <textarea id="generatePrompt" maxlength="1500" required rows="3" placeholder="Describe one instrument and how it should play…"></textarea>
-          <fieldset id="genreChips"><legend class="lab">GENRE</legend></fieldset>
-          <fieldset id="roleChips"><legend class="lab">INSTRUMENT ROLE</legend></fieldset>
+        <form id="melodyForm">
+          <p class="hint">Compose an editable melody on this device with Magenta MusicRNN. First use downloads a 13 MB model.</p>
           <div class="generate-fields">
-            <label class="field check"><input id="generateMono" type="checkbox" checked><span class="lab">MONOPHONIC</span></label>
-          </div>
-          <fieldset id="generatePadMap" hidden><legend class="lab">ONSET → PAD MAPPING</legend>
-            <label class="field"><span class="lab">LOW</span><select id="generatePadLow" aria-label="Low onset pad"></select></label>
-            <label class="field"><span class="lab">MID</span><select id="generatePadMid" aria-label="Mid onset pad"></select></label>
-            <label class="field"><span class="lab">HIGH</span><select id="generatePadHigh" aria-label="High onset pad"></select></label>
-          </fieldset>
-          <div class="generate-fields">
-            <label class="field"><span class="lab">MODEL</span><select id="generateModel" aria-label="Generation model" disabled><option>Loading models…</option></select></label>
-            <label class="field"><span class="lab">KEY</span><select id="generateKey" aria-label="Generation key"><option>C</option><option>C#</option><option>D</option><option>Eb</option><option>E</option><option>F</option><option>F#</option><option>G</option><option>Ab</option><option>A</option><option>Bb</option><option>B</option></select></label>
-            <label class="field"><span class="lab">VERSIONS</span><select id="generateCount" aria-label="Number of versions to generate"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>
-            <label class="field"><span class="lab">LEN S</span><input id="generateLength" aria-label="Generation length seconds" type="number" min="5" max="240" step="1" value="30"></label>
-            <div class="voice-generate"><label class="field"><span class="lab">INSTRUMENT</span><select id="generateInstrument" aria-label="Instrument"></select></label><button id="generateButton" class="btn primary" type="submit" disabled><svg class="i"><use href="#i-gen"/></svg>GENERATE</button></div>
-            <button id="refreshModels" class="btn" type="button">REFRESH MODELS</button>
-            <button id="retryTranscription" class="btn" type="button" hidden>RETRY CONVERSION</button>
-          </div>
-          <p id="generateModelInfo" class="hint"></p>
-          <p class="hint">Hear the AI's tune on your instrument. After generating, change Instrument to hear the same notes in a different voice — no regeneration. Uses Gemini quota; each version is one generation.</p>
-          <p id="generateStatus" class="mono hint" role="status" aria-live="polite"></p>
+            <label class="field">Opening phrase<select id="melodySeed"><option value="rise">Rising</option><option value="fall">Falling</option></select></label>
+            <label class="field">Length<select id="melodyBars"><option value="2">2 bars</option><option value="4">4 bars</option></select></label>
+            <label class="field">Instrument<select id="melodyInstrument"></select></label>
+            <button id="melodyGenerate" type="submit" class="btn primary">Generate melody</button>
+          </div><p id="melodyStatus" role="status"></p>
         </form>
 
 

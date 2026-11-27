@@ -854,4 +854,4 @@ body[data-view=beat] .transport { height:auto; min-height:62px; flex-wrap:wrap; 
 [data-theme=dark] .step.now { box-shadow:inset 0 0 0 2px #d59aa7; }
 
 /* The hosted edition works locally in the browser. */
-#genTuneCta, #generatePart, .generator, #humBtn, #beatHum, .hum-panel, #clipStretchApply, label:has(> #clipStretch) { display:none !important; }
+.ai-hum, #humBtn, #beatHum, .hum-panel, #clipStretchApply, label:has(> #clipStretch) { display:none !important; }
